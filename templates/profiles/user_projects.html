@@ -1,0 +1,37 @@
+{% extends "profiles/base.html" %}
+
+{% load einsteinish %}
+{% block profile_content %}
+<div class="row-fluid">
+    {% ifequal user userinfo %}
+    <ul class="nav nav-pills">
+        <li class="pull-right"><a href="{% url 'project_create' userinfo.username %}"><i class="icon-plus"></i> Add new Project</a></li>
+    </ul>
+    {% endifequal %}
+    <div class="span11">
+        <div class="row-fluid">
+        {% for project in projects %}
+            <div class="span12 user-project">
+                <h3>{{ project.title }}</h3>
+                <p>
+                    <a href="{{ project.url }}" class="btn btn-success"><i class="icon-link"></i> Project Website</a>
+                    {% if project.source_url %}
+                    <a href="{{ project.source_url }}" class="btn success"><i class="icon-code"></i> Source</a>
+                    {% endif %}
+                    {% ifequal user userinfo %}
+                    <form class="form form-inline" action="{% url 'project_delete' username=userinfo.username pk=project.id %}" method="post">{% csrf_token %}
+                        <a href="{% url 'project_update' username=userinfo.username pk=project.pk %}" class="btn btn-mini"><i class="icon-edit"></i> Edit</a>
+                        <button type="submit" class="btn btn-mini btn-danger"><i class="icon-remove"> Remove</i></button>
+                    </form>
+                    {% endifequal %}
+                </p>
+                <p>{{ project.description|default:"No description given" }}</p>
+            </div>
+        {% empty %}
+        <p>No projects listed</p>
+        {% endfor %}
+        </div>
+        {% include "pagination.html" %}
+    </div>
+</div>
+{% endblock %}

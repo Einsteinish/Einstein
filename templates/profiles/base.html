@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load active from einsteinish %}
+
+{% load gravatar %}
+
+{% block content %}
+<div class="row-fluid profile-page">
+    <div class="span3 profile-sidebar">
+        <div class="row-fluid">
+            <div class="span12 profile-photo">
+                {% if userinfo.userprofile.gravatar_email %}
+                <a href="http://gravatar.com/emails/"><img class="img-polaroid" src="{% gravatar_url userinfo.userprofile.gravatar_email %}" alt="{{ userinfo }} photo - einsteinish" /></a>
+                {% else %}
+                <a href="http://gravatar.com/emails/"><img class="img-polaroid" src="http://placehold.it/350&text={{ userinfo.username }}"/></a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span12 profile-short-info">
+                <ul class="nav nav-list ">
+                    <li class="nav-header">{{ userinfo }}</li>
+                    <li><a href="{{ userinfo.userprofile.get_absolute_url }}"><i class="icon-user"></i> {{ userinfo.get_full_name|default:"(Not provided)" }}</a></li>
+                    <li class="nav-header">Other Profiles</li>
+                    {% if userinfo.userprofile.website %}<li><a title="{{ userinfo.username }} website" href="{{ userinfo.userprofile.website }}"><i class="icon-external-link"></i> Website/Blog</a></li>{% endif %}
+                    {% if userinfo.userprofile.github %}<li><a title="{{ userinfo.username }} github profile" href="http://github.com/{{ userinfo.userprofile.github }}"><i class="icon-github"></i> Github</a></li>{% endif %}
+                    {% if userinfo.userprofile.twitter %}<li><a title="{{ userinfo.username }} twitter profile" href="http://twitter.com/{{ userinfo.userprofile.twitter }}"><i class="icon-twitter"></i> Twitter</a></li>{% endif %}
+                    {% if userinfo.userprofile.stackoverflow %}<li><a title="{{ userinfo.username }} stackoverflow profile" href="http://stackoverflow.com/users/{{ userinfo.userprofile.stackoverflow }}"><i class="icon-stackexchange"></i> Stackoverflow</a></li>{% endif %}
+                    {% if userinfo.userprofile.facebook %}<li><a title="{{ userinfo.username }} facebook profile" href="http://facebook.com/{{ userinfo.userprofile.facebook }}"><i class="icon-facebook"></i> Facebook</a></li>{% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="span9 profile-main">
+        <ul class="nav nav-tabs">
+            {% url 'user_info' userinfo.username as info_tab %}
+            <li class="{% active request.path info_tab %}"><a href="{{ info_tab }}"><i class="icon-info-sign"></i> Info</a></li>
+            {% url 'user_projects' username=userinfo.username as project_tab %}
+            <li class="{% active request.path  project_tab %}"><a href="{{ project_tab }}"><i class="icon-briefcase"></i> Projects</a></li>
+            {% url 'user_resources' userinfo.username as resource_tab %}
+            <li class="{% active request.path  resource_tab %}"><a href="{{ resource_tab }}"><i class="icon-pushpin"></i> Shared Resources</a></li>
+        </ul>
+        <div class="row-fluid profile-content">
+            {% block profile_content %}{% endblock %}
+        </div>
+    </div>
+</div>
+{% endblock %}

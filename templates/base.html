@@ -1,0 +1,23 @@
+{% extends "bare_base.html" %}
+
+{% block head_title %}{{ headline }}{% endblock head_title %}
+{% block body %}
+{% include "snippets/navbar.html" %}
+{% block messages %}
+{% if messages %}
+<div class="container">
+    {% for message in messages %}
+        <div class="message alert alert-{% if message.tags %}{{ message.tags }}{% endif %}">
+        <button type="button" class="close" data-dismiss="alert">x</button>
+        {{ message }}
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endblock messages %}
+<div class="content container">
+    {% block content %}{% endblock content %}
+</div><!--/.content -->
+
+{% include "snippets/footer.html" %}
+{% endblock body %}
