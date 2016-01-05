@@ -1,4 +1,4 @@
-#Installation Instructions
+#Installation Instructions (http://einsteinish.com)
 
 *Make sure you have Python 2.7.6, virtualenv, pip and sqlite3 installed*
 
