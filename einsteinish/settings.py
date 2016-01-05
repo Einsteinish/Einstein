@@ -76,8 +76,6 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
-SECRET_KEY = '(r2el3qxdzm1&amp;)mxyllv56%8)r1$c*uvc1&amp;8x4mn*et#z)hj0)'
-
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
