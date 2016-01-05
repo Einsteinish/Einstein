@@ -5,12 +5,12 @@
     <div class="span3" id="search-sidebar">
         <form class="form-search" method="get" action="">
             {% include "snippets/forms/form_base_without_csrf.html" %}
-            <button class="btn btn-success" type="submit">Submit</button>
+            <button class="btn btn-success" type="submit">Submit...</button>
         </form>
     </div>
     <div class="span9" id="search-content">
         {% if query %}
-        <h3>Results for "{{ query }}"</h3>
+        <h3>Search results for "{{ query }}" ...</h3>
         <div class="row-fluid">
             {% for result in page.object_list %}
             <div class="span12 search-result">
