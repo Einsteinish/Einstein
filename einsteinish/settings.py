@@ -54,10 +54,6 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
 )
 
-TEMPLATE_DIRS = (
-    os.path.join(PROJECT_ROOT, 'templates'),
-)
-
 AUTHENTICATION_BACKENDS = (
         'django.contrib.auth.backends.ModelBackend',
         'guardian.backends.ObjectPermissionBackend',
@@ -90,15 +86,31 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.contrib.auth.context_processors.auth',
-    'django.core.context_processors.debug',
-    #'django.core.context_processors.i18n',
-    'django.core.context_processors.media',
-    'django.core.context_processors.request',
-    'django.contrib.messages.context_processors.messages',
-    'django.core.context_processors.static',
-)
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            # insert your TEMPLATE_DIRS here
+            os.path.join(PROJECT_ROOT, 'templates'),
+        ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                # Insert your TEMPLATE_CONTEXT_PROCESSORS here or use this
+                # list if you haven't customized them:
+
+                'django.contrib.auth.context_processors.auth',
+                'django.core.context_processors.debug',
+                'django.core.context_processors.i18n',
+                'django.core.context_processors.media',
+                'django.core.context_processors.request',
+                'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.static',
+                'django.template.context_processors.tz',
+            ],
+        },
+    },
+]
 
 
 ROOT_URLCONF = 'einsteinish.urls'
@@ -139,6 +151,8 @@ HAYSTACK_CONNECTIONS = {
             'INDEX_NAME': 'haystack',
         },
 }
+# For light traffic
+# HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 #DJANGO extended settings we are using
 LOGIN_REDIRECT_URL = '/resource/'
@@ -183,7 +197,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'einsteinishuserdb',
-        'USER': 'einsteinishuser',             # Not used with sqlite3.
+        'USER': 'user',             # Not used with sqlite3.
         'PASSWORD': 'password',            # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
