@@ -13,7 +13,7 @@ class Topic(models.Model):
     slug = models.SlugField(max_length=255)
     help_text = models.CharField(max_length=255, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
-    thumbnail = models.ImageField(upload_to='topics', null=True, blank=True)
+    thumbnail = models.ImageField(upload_to='topics/%Y/%m/%d/', null=True, blank=True)
     official_website = models.URLField(null=True, blank=True)
 
     class Meta:
@@ -66,7 +66,7 @@ class Resource(models.Model):
     updated_at = models.DateTimeField(auto_now=True, editable=False)
     show = models.BooleanField(default=True)
     # new
-    thumbnail = models.ImageField(upload_to='resources', null=True, blank=True)
+    thumbnail = models.ImageField(upload_to='resources/%Y/%m/%d/', null=True, blank=True)
 
     def __unicode__(self):
         return self.title
