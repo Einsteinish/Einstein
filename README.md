@@ -53,3 +53,6 @@ This project is licensed under [MIT License](http://mit-license.org). See LICENS
 + djangoratings-vote : ip-address width = 64. Otherwise, we get the following error: Data truncated for column 'ip_address' at row 1
 + discus comment tool requires registration. 
 + Upgraded to Django 1.8.7 on Jan. 2, 2015 (2 fixes - 1. Import user after loading app, 2. NoReverseMatch for admin delete)
++ Added thumbnail field to resources (resources/models.py)
++ Bug fix for resource image upload by adding enctype="multipart/form-data" to templates/resources/resource_form.html
++ The upload_to folder switched to MEDIA_ROOT/topics/%Y/%m/%d/ and MEDIA_ROOT/resources/%Y/%m/%d/ to resources/models.py to Topic and Resource classes.
