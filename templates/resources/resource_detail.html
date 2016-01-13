@@ -68,6 +68,14 @@
                                 <tr>
                                     <td>Date Submitted</td> <td>{{ resource.created_at|date:"D d M Y"  }}</td>
                                 </tr>
+                                {% if resource.thumbnail %}
+                                <tr>
+                                    <td>Thumbnail</td> 
+                                    <td>
+                                      <img src="{{ resource.thumbnail.url }}" alt="{{ resource.name }} logo" class="pull-right" />
+                                    </td>
+                                </tr>
+                                {% endif %}
                             </tbody>
                         </table>
                     </div>
