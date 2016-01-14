@@ -67,6 +67,7 @@ class Resource(models.Model):
     show = models.BooleanField(default=True)
     # new
     thumbnail = models.ImageField(upload_to='resources/%Y/%m/%d/', null=True, blank=True)
+    video = models.FileField(upload_to='resources/%Y/%m/%d/', null=True, blank=True)
 
     def __unicode__(self):
         return self.title
