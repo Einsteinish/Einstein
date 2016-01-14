@@ -57,3 +57,4 @@ This project is licensed under [MIT License](http://mit-license.org). See LICENS
 + Bug fix for resource image upload by adding enctype="multipart/form-data" to templates/resources/resource_form.html
 + The upload_to folder switched to MEDIA_ROOT/topics/%Y/%m/%d/ and MEDIA_ROOT/resources/%Y/%m/%d/ to resources/models.py to Topic and Resource classes on Jan. 12, 2016.
 + Can use markdown (django-markdown-duex) for TextField such as Description and Help_Text in Resources/Topic. Basic tutorial is available at https://daringfireball.net/projects/markdown/basics.
++ Added video field to Resources
