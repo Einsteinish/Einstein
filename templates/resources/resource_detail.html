@@ -76,6 +76,18 @@
                                     </td>
                                 </tr>
                                 {% endif %}
+                                {% if resource.video %}
+                                <tr>
+                                    <td>Video {{ resource.video.url }}</td> 
+                                    <td>
+                                      <video width="320" height="240" controls autoplay>
+                                        <source src="{{ resource.video.url }}" type="video/mp4">
+                                        <source src="{{ resource.video.url }}" type="video/ogg">
+                                        Your browser does not support the video tag.
+                                      </video>  
+                                    </td>
+                                </tr>
+                                {% endif %}
                             </tbody>
                         </table>
                     </div>
