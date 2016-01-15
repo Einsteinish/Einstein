@@ -65,9 +65,10 @@ class Resource(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True, editable=False)
     show = models.BooleanField(default=True)
-    # new
     thumbnail = models.ImageField(upload_to='resources/%Y/%m/%d/', null=True, blank=True)
     video = models.FileField(upload_to='resources/%Y/%m/%d/', null=True, blank=True)
+    embed = models.CharField(max_length=255, null=True, blank=True)
+
 
     def __unicode__(self):
         return self.title
