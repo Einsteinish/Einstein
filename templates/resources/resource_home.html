@@ -26,8 +26,8 @@
                             <span>{{ topic.name }}</span>
                     </div>
                     <div class="topic-image">
-                    {% if topic.thumbnail %}
-                            <img src="{{ topic.thumbnail.url }}" alt="{{ topic.name }}" />
+                    {% if topic.image_thumbnail %}
+                            <img src="{{ topic.image_thumbnail.url }}" alt="{{ topic.name }}" />
                     {% else %}
                     <img src="{{ STATIC_URL }}img/topic.png" alt="{{ topic.name }} image" />
                     {% endif %}

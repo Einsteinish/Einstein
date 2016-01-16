@@ -37,8 +37,8 @@
 <div class="row-fluid topic-about">
 <h3>About {{ current_topic.name }}</h3>
 <section class="span12 markdown-text">
-{% if current_topic.thumbnail %}
-<img src="{{ current_topic.thumbnail.url }}" alt="{{ current_topic.name }} logo" class="pull-right" />
+{% if current_topic.image_thumbnail %}
+<img src="{{ current_topic.image_thumbnail.url }}" alt="{{ current_topic.name }} logo" class="pull-right" />
 {% endif %}
 {{ current_topic.description|markdown:"safe" }}
 </section>
@@ -74,12 +74,12 @@
 <script type="text/javascript">
     $(document).ready(function() {
         var maxHeight = 0;
-        $('.thumbnail').each(function(){ 
+        $('.image_thumbnail').each(function(){ 
             if($(this).height() > maxHeight) { 
                 maxHeight = $(this).height(); 
             }
             });
-        $('.thumbnail').height(maxHeight);
+        $('.image_thumbnail').height(maxHeight);
     });
 </script>
 {% endblock %}

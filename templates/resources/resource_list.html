@@ -26,12 +26,12 @@
 <script type="text/javascript">
     $(document).ready(function() {
         var maxHeight = 0;
-        $('.thumbnail').each(function(){ 
+        $('.image_thumbnail').each(function(){ 
             if($(this).height() > maxHeight) { 
                 maxHeight = $(this).height(); 
             }
             });
-        $('.thumbnail').height(maxHeight);
+        $('.image_thumbnail').height(maxHeight);
     });
 </script>
 {% endblock %}

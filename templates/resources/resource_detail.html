@@ -68,31 +68,31 @@
                                 <tr>
                                     <td>Date Submitted</td> <td>{{ resource.created_at|date:"D d M Y"  }}</td>
                                 </tr>
-                                {% if resource.thumbnail %}
+                                {% if resource.image_thumbnail %}
                                 <tr>
                                     <td>Thumbnail</td> 
                                     <td>
-                                      <img src="{{ resource.thumbnail.url }}" alt="{{ resource.name }} logo" class="pull-right" />
+                                      <img src="{{ resource.image_thumbnail.url }}" alt="{{ resource.name }} logo" class="pull-right" />
                                     </td>
                                 </tr>
                                 {% endif %}
-                                {% if resource.video %}
+                                {% if resource.video_upload %}
                                 <tr>
-                                    <td>Video</td> 
+                                    <td>Video Upload</td> 
                                     <td>
                                       <video width="640" height="480" controls>
-                                        <source src="{{ resource.video.url }}" type="video/mp4">
-                                        <source src="{{ resource.video.url }}" type="video/ogg">
+                                        <source src="{{ resource.video_upload.url }}" type="video/mp4">
+                                        <source src="{{ resource.video_upload.url }}" type="video/ogg">
                                         Your browser does not support the video tag.
                                       </video>  
                                     </td>
                                 </tr>
                                 {% endif %}
-                                {% if resource.embed %}
+                                {% if resource.video_embed %}
                                 <tr>
-                                    <td>Embedded Video</td> 
+                                    <td>Video Embed</td> 
                                     <td>
-                                      {{ resource.embed|safe }}
+                                      {{ resource.video_embed|safe }}
                                     </td>
                                 </tr>
                                 {% endif %}

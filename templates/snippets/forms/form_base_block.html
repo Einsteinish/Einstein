@@ -15,6 +15,7 @@
 
 {% for field in form.visible_fields %}
     <div class="control-group{% if field.errors %} error{% endif %}">
+        <br><br>
         <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}{% if field.field.required %}*{% endif %} </label>
         <div class="controls">
             {{ field|add_class:"input-block-level" }}
