@@ -30,7 +30,7 @@ We are developing knowledge library for learning Qunatum Universe. The best reso
 + [django-ratings](https://github.com/dcramer/django-ratings/)
 + MySQL (sqlite3 for dev)
 + [django-haystack](http://haystacksearch.org/)
-+ [elasticsearch](http://elasticsearch.org/)
++ [elasticsearch](http://elasticsearch.org/) : sudo systemctl start elasticsearch (run), sudo systemctl enable elasticsearch (booting time autorun)
 
 *For full requirements, see requirment.txt*
 
@@ -59,3 +59,4 @@ This project is licensed under [MIT License](http://mit-license.org). See LICENS
 + The upload_to folder switched to MEDIA_ROOT/topics/%Y/%m/%d/ and MEDIA_ROOT/resources/%Y/%m/%d/ to resources/models.py to Topic and Resource classes on Jan. 12, 2016.
 + Can use markdown (django-markdown-duex) for TextField such as Description and Help_Text in Resources/Topic. Basic tutorial is available at https://daringfireball.net/projects/markdown/basics.
 + Added a video field as well as a filed for embedded YouTube video to Resources.
+
