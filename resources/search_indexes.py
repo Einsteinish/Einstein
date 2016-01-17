@@ -5,7 +5,7 @@ from resources.models import Resource
 class ResourceIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.CharField(document=True, use_template=True)
     created_by = indexes.CharField(model_attr='created_by')
-    help_text = indexes.CharField(model_attr='help_text')
+    help_text = indexes.CharField(model_attr='help_text', null=True)
 
     def get_model(self):
         return Resource
