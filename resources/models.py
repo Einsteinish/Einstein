@@ -66,6 +66,8 @@ class Resource(models.Model):
     updated_at = models.DateTimeField(auto_now=True, editable=False)
     show = models.BooleanField(default=True)
     image_thumbnail = models.ImageField(upload_to='resources/%Y/%m/%d/', null=True, blank=True)
+    image_thumbnail2 = models.ImageField(upload_to='resources/%Y/%m/%d/', null=True, blank=True)
+    image_thumbnail3 = models.ImageField(upload_to='resources/%Y/%m/%d/', null=True, blank=True)
     video_upload = models.FileField(upload_to='resources/%Y/%m/%d/', null=True, blank=True)
     video_embed = models.CharField(max_length=255, null=True, blank=True)
 

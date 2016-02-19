@@ -76,6 +76,22 @@
                                     </td>
                                 </tr>
                                 {% endif %}
+                                {% if resource.image_thumbnail2 %}
+                                <tr>
+                                    <td>Thumbnail 2</td> 
+                                    <td>
+                                      <img src="{{ resource.image_thumbnail2.url }}" alt="{{ resource.name }} logo" class="pull-right" />
+                                    </td>
+                                </tr>
+                                {% endif %}
+                                {% if resource.image_thumbnail3 %}
+                                <tr>
+                                    <td>Thumbnail3</td> 
+                                    <td>
+                                      <img src="{{ resource.image_thumbnail3.url }}" alt="{{ resource.name }} logo" class="pull-right" />
+                                    </td>
+                                </tr>
+                                {% endif %}
                                 {% if resource.video_upload %}
                                 <tr>
                                     <td>Video Upload</td> 
