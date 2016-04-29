@@ -22,7 +22,7 @@ We are developing knowledge library for learning Qunatum Universe. The best reso
 
 ##Tools/Apps Used
 
-+ [Django 1.6.11](https://www.djangoproject.com/)
++ [Django 1.8.7](https://www.djangoproject.com/)
 + [Twitter Bootstrap](http://getbootstrap.com/)
 + [django-registration](https://django-registration.readthedocs.org/en/latest/)
 + [django-guardian](https://github.com/lukaszb/django-guardian)
