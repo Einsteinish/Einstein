@@ -10,7 +10,7 @@ To activate this account, please click the following link within the next
 http://{{site.domain}}{% url 'registration_activate' activation_key %}
 
 Thank you for your interest in {{ site.name }}. If you need any help or have 
-a suggestion, please email us at admin@{{ site.domain }}.
+a suggestion, please email us at einstein.ish@aol.com.
 
 Sincerely,
 {{ site.name }} Management
