@@ -4,7 +4,7 @@
 
 <div class="auth-form">
 <form method="post" action="{% url 'django.contrib.auth.views.login' %}">{% csrf_token %}
-    <h2 class="auth-form-heading">Login <small>to your account</small></h2>
+    <h2 class="auth-form-heading">Login <small>(username not email)</small></h2>
     <hr />
 {% if form.errors %}
 <div class="alert alert-error"><button type="button" data-dismiss="alert" class="close">&times;</button>
