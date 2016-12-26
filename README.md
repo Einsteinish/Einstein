@@ -1,6 +1,6 @@
 #Einsteinish (http://einsteinish.com)
 ----
-![alt text](http://einsteinish.com/static/img/Blackhole.jpg)
+![alt text](https://github.com/Einsteinish/Einstein/blob/master/static/img/Blackhole.jpg)
 
 We are developing knowledge library for learning Qunatum Universe. The best resources to learn something on the web are scattered and we may waste lot of time. We aim to elinimate this by recommending the best resources.
 
