@@ -15,9 +15,11 @@
 </div>
 {% endif %}
 {% endblock messages %}
+{% include "snippets/ads-content-start.html" %}
 <div class="content container">
     {% block content %}{% endblock content %}
 </div><!--/.content -->
 
+{% include "snippets/ads-footer.html" %}
 {% include "snippets/footer.html" %}
 {% endblock body %}
