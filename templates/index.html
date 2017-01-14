@@ -9,6 +9,22 @@
         <h1>Universe & Quantum World</h1>
         <p class="lead">Want to know more about the Universe, but wasted a lot of time in finding the right resource? We have the best resources curated for you.</p>
         <a href="{% if user.is_authenticated %}{% url 'resource_home' %}{% else %}{% url 'registration_register' %}{% endif %}" class="btn btn-danger register-button btn-large"> Register Now <i class="icon-double-angle-right"></i></a> 
+        <br>
+        <br>
+        <br>
+        <!-- Place this tag where you want the widget to render. -->
+        <div class="g-person" data-width="304" data-href="//plus.google.com/111664369941456137911" data-rel="author"></div>
+
+        <!-- Place this tag after the last widget tag. -->
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/platform.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+        <br><br>
+
     </div>
 </div>
 <div class="row-fluid">
