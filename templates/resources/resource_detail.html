@@ -126,7 +126,10 @@
                         {% disqus_show_comments %}
                 </div>
                             </div>
-                            <div class="span3 well" id="sidebar">{% include "resources/topics.html" %}</div>
+                            <div class="span3 well" id="sidebar">
+                              {% include "resources/topics.html" %}
+                              {% include "snippets/ads-side-skyscraper.html" %}
+                            </div>
         </div>
         {% endblock %}
     </div>
