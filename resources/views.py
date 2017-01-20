@@ -207,6 +207,8 @@ class ResourceCreateView(LoginRequiredMixin, SetHeadlineMixin, SidebarMixin, Cre
 
 
 class ResourceUpdateView(LoginRequiredMixin, PermissionRequiredMixin, SetHeadlineMixin, SidebarMixin, UpdateView):
+#class ResourceUpdateView(LoginRequiredMixin, SetHeadlineMixin, SidebarMixin, UpdateView):
+
     form_class = ResourceUpdateForm
     model = Resource
     headline = 'Edit Resource'
@@ -217,11 +219,16 @@ class ResourceUpdateView(LoginRequiredMixin, PermissionRequiredMixin, SetHeadlin
 class TopicCreateView(SetHeadlineMixin, SidebarMixin, CreateView):
     form_class = TopicCreateForm
     template_name = 'resources/topic_form.html'
-    permission_required = 'resources.add_topic'
+
+    # permission_required not needed (has no effect)
+    # since we dropped permission for creating topic in urls.py
+    permission_required = 'resources.add_topic'  
     headline = 'Create New Topic'
 
 
 class TopicUpdateView(PermissionRequiredMixin, SetHeadlineMixin, SidebarMixin, UpdateView):
+#class TopicUpdateView(SetHeadlineMixin, SidebarMixin, UpdateView):
+
     form_class = TopicUpdateForm
     model = Topic
     template_name = 'resources/topic_form.html'
