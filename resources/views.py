@@ -222,7 +222,7 @@ class TopicCreateView(SetHeadlineMixin, SidebarMixin, CreateView):
 
     # permission_required not needed (has no effect)
     # since we dropped permission for creating topic in urls.py
-    permission_required = 'resources.add_topic'  
+    # permission_required = 'resources.add_topic'  
     headline = 'Create New Topic'
 
 
