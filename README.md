@@ -62,3 +62,6 @@ This project is licensed under [MIT License](http://mit-license.org). See LICENS
 + [Related Tutorials I - Errors and Fixes for einsteinish.com](http://www.bogotobogo.com/python/Django/Python-Django-1.8-collection-of-errors-and-fixes.php)
 + [Related Tutorials II - Elastic search used in einsteinish.com](http://www.bogotobogo.com/python/Django/Python-Django-Haystack-Elasticsearch.php)
 
+## To Do
+
++ Remote Thumbnail column
