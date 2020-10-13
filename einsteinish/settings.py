@@ -1,11 +1,14 @@
 import os
 
+# secrets are defined in local_settings.py
+
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
 DEBUG = True
 
 ADMINS = (
-     ('K Hong', 'contact.einsteinish@gmail.com'),
+     #('K Hong', 'contact.einsteinish@gmail.com'),
+     ('K Hong', 'einsteinish@aol.com'),
 )
 
 MANAGERS = ADMINS
@@ -159,10 +162,12 @@ LOGIN_REDIRECT_URL = '/resource/'
 ABSOLUTE_URL_OVERRIDES = {
         'auth.user': lambda u: "/profile/%s/" % u.username,
 }
-SERVER_EMAIL = "kihyuck.hong@gmail.com"
+#SERVER_EMAIL = "kihyuck.hong@gmail.com"
+SERVER_EMAIL = "k.hong@aol.com"
 
 #Django-Registration Settings
 ACCOUNT_ACTIVATION_DAYS = 7
+#DEFAULT_FROM_EMAIL =  "k.hong@aol.com"
 DEFAULT_FROM_EMAIL =  "kihyuck.hong@gmail.com"
 
 #Django-Guardian Settings
@@ -210,8 +215,11 @@ DATABASES = {
 SITE_ID = 3   # localhost:8000
 
 # Moved to local_settings.py
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'kihyuck.hong@gmail.com'
+#EMAIL_HOST = 'smtp.gmail.com'
+#EMAIL_HOST_USER = 'kihyuck.hong@gmail.com'
+#EMAIL_HOST_PASSWORD = 'password'
+EMAIL_HOST = 'smtp.aol.com'
+EMAIL_HOST_USER = 'k.hong@aol.com'
 EMAIL_HOST_PASSWORD = 'password'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True

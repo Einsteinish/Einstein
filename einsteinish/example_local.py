@@ -34,7 +34,7 @@ SITE_ID = 2   # localhost:8000
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'kihyuck.hong@gmail.com'
-EMAIL_HOST_PASSWORD = 'email-password'
+EMAIL_HOST_PASSWORD = 'app-password'    # this is not email password and should get it from google (Application-specific password)
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
