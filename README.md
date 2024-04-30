@@ -1,10 +1,16 @@
-#Einsteinish (http://einsteinish.com)
-----
-![alt text](https://github.com/Einsteinish/Einstein/blob/master/static/img/Blackhole.jpg)
+# Einsteinish (http://einsteinish.com)
 
 We are developing knowledge library for learning Qunatum Universe. The best resources to learn something on the web are scattered and we may waste lot of time. We aim to elinimate this by recommending the best resources.
 
-##Version 1 features
+---
+
+![alt text](https://github.com/Einsteinish/Einstein/blob/master/static/img/Blackhole.jpg)
+
+---
+
+## Features
+
+### Current Features
 
 + Users can share any link of interesting blog post or video in the Resource Section.
 + Resources are divided in topics.
@@ -13,14 +19,15 @@ We are developing knowledge library for learning Qunatum Universe. The best reso
 + Topic follow button allow users to follow topics to get interesting news, new resources.
 + Explore section lets view the ongoing activity of the site at a glance.
 
-##Later features
+### Planned Features
 
 + Moderators and more active users will be able to edit wiki like content in the topics and resources.
 + Tracks will be introduced to give users ability to create content for the their audiences and distribute them.
 + Users can follow other interesting users.
 
+---
 
-##Tools/Apps Used
+## Tools/Apps Used
 
 + [Django 1.8.7](https://www.djangoproject.com/)
 + [Twitter Bootstrap](http://getbootstrap.com/)
@@ -34,12 +41,12 @@ We are developing knowledge library for learning Qunatum Universe. The best reso
 
 *For full requirements, see requirment.txt*
 
+---
 
-##Install
+## Install
 
 + See INSTALL.md for full installation instructions.
 + http://www.einsteinish.com
-
 
 ## Contact
 
@@ -49,18 +56,20 @@ We are developing knowledge library for learning Qunatum Universe. The best reso
 
 This project is licensed under [MIT License](http://mit-license.org). See LICENSE.txt
 
+---
+
 ## Note
 
-+ djangoratings-vote : ip-address width = 64. Otherwise, we get the following error: Data truncated for column 'ip_address' at row 1
-+ discus comment tool requires registration. 
-+ Upgraded to Django 1.8.7 on Jan. 2, 2016 (2 fixes - 1. Import user after loading app, 2. NoReverseMatch for admin delete)
-+ Added thumbnail field to resources (resources/models.py)
-+ Bug fix for resource image upload by adding enctype="multipart/form-data" to templates/resources/resource_form.html
-+ The upload_to folder switched to MEDIA_ROOT/topics/%Y/%m/%d/ and MEDIA_ROOT/resources/%Y/%m/%d/ to resources/models.py to Topic and Resource classes on Jan. 12, 2016.
-+ Can use markdown (django-markdown-duex) for TextField such as Description and Help_Text in Resources/Topic. Basic tutorial is available at https://daringfireball.net/projects/markdown/basics.
-+ Added a video field as well as a filed for embedded YouTube video to Resources.
-+ [Related Tutorials I - Errors and Fixes for einsteinish.com](http://www.bogotobogo.com/python/Django/Python-Django-1.8-collection-of-errors-and-fixes.php)
-+ [Related Tutorials II - Elastic search used in einsteinish.com](http://www.bogotobogo.com/python/Django/Python-Django-Haystack-Elasticsearch.php)
++ **Error Handling:** Ensure `ip-address width = 64` to avoid data truncation errors.
++ **Comments:** Disqus comment tool requires registration.
++ **Updates:** 
+  + Upgraded to Django 1.8.7 on Jan. 2, 2016 with critical fixes.
+  + Introduced thumbnail and video fields to Resources.
+  + Switched `upload_to` folder paths to enhance media management.
+  + Enabled markdown support for text fields.
++ **Tutorials:** 
+  + [Errors and Fixes for einsteinish.com](http://www.bogotobogo.com/python/Django/Python-Django-1.8-collection-of-errors-and-fixes.php)
+  + [Using Elasticsearch with einsteinish.com](http://www.bogotobogo.com/python/Django/Python-Django-Haystack-Elasticsearch.php)
 
 ## To Do
 
